@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<%- include ../partials/head.ejs %>
+
+<body>
+    <div class="centered-form">
+        <div class="centered-form__box">
+            <h1>Join</h1>
+            <form action="/chat">
+                <label>Display name</label>
+                <input type="text" name="username" placeholder="Display name" id="name" required>
+                <label>Room</label>
+                <input type="text" name="room" placeholder="Room" id="roomInput">
+                <p class="meta" align="center"> OR </p><br>
+                <label>Select a room</label>
+                <select id="roomSelect" name="room">
+                    <option selected>Select a room</option>
+                    <% rooms.forEach((room) => { %>
+                        <option value="<%= room %>"><%= room %></option>
+                    <% }) %>
+                </select>
+                <button>Join</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="/js/form.js"></script>
+</body>
+
+</html>
